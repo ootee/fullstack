@@ -34,17 +34,6 @@ class App extends React.Component {
         }
     }
 
-    // positiivisuus = () => {
-    //     (this.state.hyva / this.state.palautteita * 100).toFixed(1)
-    // }
-
-    // keskiarvo = () => (this.state.positiivisuus / this.state.palautteita).toFixed(1)
-
-    // positiivisuus() {
-    //     const positiivisuus = (this.state.hyva / this.state.palautteita * 100).toFixed(1)
-    //     return positiivisuus
-    // }
-
     render() {
         return (
             <div>

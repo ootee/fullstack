@@ -6,15 +6,8 @@ class App extends React.Component {
         super(props)
         this.state = {
             selected: 0,
-            votes: []
+            votes: [0, 0, 0, 0, 0, 0]
         }
-        const array = []
-
-        for (let index = 0; index < anecdotes.length; index++) {
-            array[index] = 0
-        }
-
-        this.state.votes = array
     }
 
     rndm = () => {
@@ -26,26 +19,27 @@ class App extends React.Component {
 
     vote = () => {
         const copy = { ...this.state.votes }
+        console.log(copy);
+
         copy[this.state.selected] += 1
         this.setState({
-            votes: copy
+            votes: copy,
         })
+
+    }
+
+    indexOfMax = () => {
+        const array = [...this.state.votes]
+        return array.indexOf(Math.max(...array))
     }
 
     render() {
         return (
             <div>
                 <em>
-                    <strong>
-                        <Anecdote
-                            state={this.state}
-                        />
-                        <br />
-                    </strong>
+                    <p>{this.props.anecdotes[this.state.selected]}</p>
                 </em>
-                <CountVotes
-                    state={this.state}
-                />
+                <p>Has {this.state.votes[this.state.selected]} votes.</p>
                 <p>
                     <Button
                         handleClick={() => this.vote()}
@@ -56,13 +50,15 @@ class App extends React.Component {
                         text="Give me another one"
                     />
                 </p>
-                <MostVotes
-                    state={this.state}
-                />
+                <div>
+                    <p>{this.props.anecdotes[this.indexOfMax()]}</p>
+                    <p>{Math.max(...this.state.votes)}</p>
+                </div>
             </div>
         )
     }
 }
+
 
 const anecdotes = [
     'If it hurts, do it more often',
@@ -79,29 +75,4 @@ const Button = ({ handleClick, text }) => (
     </button>
 )
 
-const Anecdote = ({ state }) => (
-    <div>
-        {anecdotes[state.selected]}
-    </div>
-)
-
-const CountVotes = ({ state }) => (
-    <div>
-        This masterpiece has {state.votes[state.selected]} votes.
-    </div>
-)
-
-const MostVotes = ({ state }) => {
-    let copy = { ...state.votes }
-    copy.sort
-    copy.reverse
-    return (
-        <div>
-            {copy[0]}
-        </div>
-    )
-}
-
-
-ReactDOM.render(<App />, document.getElementById('root'));
-
+ReactDOM.render(<App anecdotes={anecdotes} />, document.getElementById('root'));
