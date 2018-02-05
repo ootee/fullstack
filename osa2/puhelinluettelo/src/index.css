@@ -1,0 +1,17 @@
+.message {
+    color: white;
+    background: green;
+    font-size: 30px;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px
+}
+
+h1 {
+    color: mediumblue;
+}
+
+h2 {
+    color: mediumblue;
+}

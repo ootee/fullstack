@@ -1,0 +1,24 @@
+{
+  "persons": [
+    {
+      "name": "Arto Järvinen",
+      "number": "050-123454",
+      "id": 3
+    },
+    {
+      "name": "Lea Kutvonen",
+      "number": "040-123456",
+      "id": 4
+    },
+    {
+      "name": "Martti Ahtisaari",
+      "number": "050-5485522",
+      "id": 9
+    },
+    {
+      "name": "Marko Ahtisaari",
+      "number": "050-8865873",
+      "id": 10
+    }
+  ]
+}
