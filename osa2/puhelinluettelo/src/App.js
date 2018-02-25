@@ -23,7 +23,7 @@ class App extends React.Component {
     event.preventDefault()
     const nameToBeAdded = this.state.newName.trim()
     const numberToBeAdded = this.state.newNumber.trim()
-    if (this.state.persons.find(p => p.name === nameToBeAdded) == null) {
+    if (this.state.persons.find(p => p.name.toLowerCase() === nameToBeAdded.toLowerCase()) == null) {
       const personObject = {
         name: nameToBeAdded,
         number: numberToBeAdded
@@ -43,7 +43,7 @@ class App extends React.Component {
         .catch(error => {
           console.log('Fail');
         })
-    } else if (this.state.persons.find(p => p.name === nameToBeAdded).number !== numberToBeAdded) {
+    } else if (this.state.persons.find(p => p.name.toLowerCase() === nameToBeAdded.toLowerCase()).number !== numberToBeAdded) {
       if (window.confirm(`${nameToBeAdded} on jo listassa. Haluatko päivittää uuden numeron?`)) {
         const person = this.state.persons.find(p => p.name === nameToBeAdded)
         const changedPerson = { ...person, number: numberToBeAdded }
@@ -102,6 +102,7 @@ class App extends React.Component {
           this.setState({
             message: "Henkilöä ei löytynyt. Ehkä hänen tietonsa olivat jo poistettu."
           })
+          this.clearMessage()
         })
     }
   }

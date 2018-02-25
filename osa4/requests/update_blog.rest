@@ -1,0 +1,9 @@
+PUT http://localhost:3001/api/blogs/5a9032bc2ebd5626801d0aff
+content-type: application/json
+
+{
+  "title": "Koodaajan ABC",
+  "author": "Matti Meikäläinen",
+  "url": "http://www.koodiabc.fi",
+  "likes": 4
+}

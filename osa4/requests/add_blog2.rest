@@ -1,0 +1,10 @@
+POST http://localhost:3001/api/blogs
+content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1sdXVra2FpIiwiaWQiOiI1YTkyZTdiNzg1YzFhOTFmMDRjM2RmZjciLCJpYXQiOjE1MTk1Nzg3NDR9.uKTOawsDN3dt9lknepR0BzJNAx2YHnIDQHIaCG2cyy4
+
+{
+  "title": "Koodaajan ÅÄÖ",
+  "author": "Minna Meikäläinen",
+  "url": "http://www.koodiaao.fi",
+  "likes": 0
+}

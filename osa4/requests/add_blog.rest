@@ -1,0 +1,10 @@
+POST http://localhost:3001/api/blogs
+content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1sdXVra2FpIiwiaWQiOiI1YTkyZTdiNzg1YzFhOTFmMDRjM2RmZjciLCJpYXQiOjE1MTk1NzcxMTh9.AeAFk6NlM8g7IyAC5TscxQTrCYgIKJVKXpUYy5e_7b4
+
+{
+  "title": "Koodaajan ABC",
+  "author": "Matti Meikäläinen",
+  "url": "http://www.koodiabc.fi",
+  "likes": 0
+}
